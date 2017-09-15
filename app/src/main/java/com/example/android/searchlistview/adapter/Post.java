@@ -1,4 +1,4 @@
-package com.example.android.searchlistview;
+package com.example.android.searchlistview.adapter;
 
 /**
  * Created by user on 9/9/2017.

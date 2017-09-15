@@ -14,6 +14,8 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.android.searchlistview.adapter.Post;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -90,8 +92,8 @@ public class MainActivity extends AppCompatActivity {
                 rowView = inflater.inflate(R.layout.item_post, null);
                 // configure view holder
                 viewHolder = new ViewHolder();
-                viewHolder.txtTitle = rowView.findViewById(R.id.title);
-                viewHolder.txtSubTitle = rowView.findViewById(R.id.subtitle);
+                viewHolder.txtTitle = (TextView) rowView.findViewById(R.id.title);
+                viewHolder.txtSubTitle = (TextView) rowView.findViewById(R.id.subtitle);
                 rowView.setTag(viewHolder);
 
             } else {
