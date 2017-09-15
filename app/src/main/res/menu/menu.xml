@@ -3,7 +3,7 @@
     <item
         android:id="@+id/action_search"
         android:orderInCategory="200"
-        android:title="Cari"
+        android:title="@string/txt_cari"
         android:icon="@drawable/ic_search"
         android:titleCondensed="Pencarian"
         app:actionViewClass="android.support.v7.widget.SearchView"

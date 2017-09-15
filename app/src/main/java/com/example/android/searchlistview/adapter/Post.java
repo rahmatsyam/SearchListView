@@ -1,33 +1,33 @@
 package com.example.android.searchlistview.adapter;
 
 /**
- * Created by user on 9/9/2017.
+ * Created by Rahmat Syam on 9/9/2017.
  */
 
 public class Post {
 
-    private String postTitle;
+    private String postJudul;
 
-    private String postSubTitle;
+    private String postIsiJudul;
 
-    public String getPostTitle() {
-        return postTitle;
+    public String getPostJudul() {
+        return postJudul;
     }
 
-    public void setPostTitle(String postTitle) {
-        this.postTitle = postTitle;
+    public void setPostJudul(String postJudul) {
+        this.postJudul = postJudul;
     }
 
-    public String getPostSubTitle() {
-        return postSubTitle;
+    public String getPostIsiJudul() {
+        return postIsiJudul;
     }
 
-    public void setPostSubTitle(String postSubTitle) {
-        this.postSubTitle = postSubTitle;
+    public void setPostIsiJudul(String postIsiJudul) {
+        this.postIsiJudul = postIsiJudul;
     }
 
-    public Post(String postTitle, String postSubTitle) {
-        this.postTitle = postTitle;
-        this.postSubTitle = postSubTitle;
+    public Post(String postJudul, String postIsiJudul) {
+        this.postJudul = postJudul;
+        this.postIsiJudul = postIsiJudul;
     }
 }

@@ -20,48 +20,56 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Created by Rahmat Syam on 9/9/2017.
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
     private MyAppAdapter myAppAdapter;
-    private ArrayList<Post> postArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.listView);
-        postArrayList = new ArrayList<>();
-        postArrayList.add(new Post("Dummy Title", "Dummy Sub Title"));
-        postArrayList.add(new Post("Searchview in actionbar", "enjoy search functionality from actionbar in android"));
-        postArrayList.add(new Post("Search in listview", "search feature that filter listview item"));
-        postArrayList.add(new Post("Android Search Bar", "adding search feature in toolbar using appcompat library"));
-        postArrayList.add(new Post("Android Studio SearchView example", "Android SearchView tutorial in android studio"));
-        postArrayList.add(new Post("Android Tutorial", "Get latest android material with simple solution"));
-        postArrayList.add(new Post("nkDroid tutorials", "A to Z Android tutorials at one place"));
+        ArrayList<Post> postArrayList = new ArrayList<>();
+        postArrayList.add(new Post("September", "Wake Me Up When September End"));
+        postArrayList.add(new Post("Oktober", "October Fast"));
+        postArrayList.add(new Post("November", "Rain in My Heart"));
+        postArrayList.add(new Post("Desember", "Last Month"));
+        postArrayList.add(new Post("Januari", "First Month"));
+        postArrayList.add(new Post("Februari", "Born Year"));
+        postArrayList.add(new Post("Maret", "Place Where The Idiot Go"));
+        postArrayList.add(new Post("April", "Not For Funny Day"));
+        postArrayList.add(new Post("Mei", "May You?"));
+        postArrayList.add(new Post("Juni", "War In Darkness"));
+        postArrayList.add(new Post("Juli", "When Last Light Gone"));
+        postArrayList.add(new Post("Agustus", "Will Always"));
 
 
         myAppAdapter = new MyAppAdapter(postArrayList, MainActivity.this);
         listView.setAdapter(myAppAdapter);
     }
 
-    public class MyAppAdapter extends BaseAdapter {
+    private class MyAppAdapter extends BaseAdapter {
 
-        public class ViewHolder {
+        class ViewHolder {
             TextView txtTitle, txtSubTitle;
 
 
         }
 
-        public List<Post> parkingList;
+        List<Post> parkingList;
 
-        public Context context;
+        Context context;
         ArrayList<Post> arraylist;
 
         private MyAppAdapter(List<Post> apps, Context context) {
             this.parkingList = apps;
             this.context = context;
-            arraylist = new ArrayList<Post>();
+            arraylist = new ArrayList<>();
             arraylist.addAll(parkingList);
 
         }
@@ -100,14 +108,14 @@ public class MainActivity extends AppCompatActivity {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
 
-            viewHolder.txtTitle.setText(parkingList.get(position).getPostTitle() + "");
-            viewHolder.txtSubTitle.setText(parkingList.get(position).getPostSubTitle() + "");
+            viewHolder.txtTitle.setText(parkingList.get(position).getPostJudul() + "");
+            viewHolder.txtSubTitle.setText(parkingList.get(position).getPostIsiJudul() + "");
             return rowView;
 
 
         }
 
-        public void filter(String charText) {
+        void filter(String charText) {
 
             charText = charText.toLowerCase(Locale.getDefault());
 
@@ -117,9 +125,9 @@ public class MainActivity extends AppCompatActivity {
 
             } else {
                 for (Post postDetail : arraylist) {
-                    if (charText.length() != 0 && postDetail.getPostTitle().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    if (charText.length() != 0 && postDetail.getPostJudul().toLowerCase(Locale.getDefault()).contains(charText)) {
                         parkingList.add(postDetail);
-                    } else if (charText.length() != 0 && postDetail.getPostSubTitle().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    } else if (charText.length() != 0 && postDetail.getPostIsiJudul().toLowerCase(Locale.getDefault()).contains(charText)) {
                         parkingList.add(postDetail);
                     }
                 }

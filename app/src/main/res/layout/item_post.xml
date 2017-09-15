@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Title"
+        android:text="@string/txt_judul"
         android:textColor="#212121"
         android:textSize="22sp" />
 
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Sub Title"
+        android:text="@string/txt_isiJudul"
         android:textColor="#787878"
         android:textSize="14sp" />
 
